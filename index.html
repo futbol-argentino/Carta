@@ -144,6 +144,19 @@ body{
 .back .bc .l1{font-size:6.6cqw;white-space:nowrap;font-style:italic;font-weight:600}
 .back .bc .l2{font-family:'Caveat',cursive;font-size:7cqw;font-weight:700;margin-top:3cqw}
 
+/* BACK: espejada (lomo a la derecha, como una contratapa real) */
+.back{border-radius:14px 3px 3px 14px;
+  box-shadow:inset 0 0 0 .25cqw rgba(0,0,0,.45),inset -.6cqw 0 1.6cqw rgba(0,0,0,.5)}
+.back .vig{transform:scaleX(-1)}
+.back .spine{left:auto;right:0;
+  background:linear-gradient(270deg,rgba(0,0,0,.6),rgba(0,0,0,.22) 70%,rgba(255,210,150,.14) 88%,rgba(0,0,0,.45) 100%)}
+.back .groove{left:auto;right:9cqw;
+  background:linear-gradient(270deg,rgba(0,0,0,.55),rgba(255,215,160,.22))}
+.back .stitch{left:4.5cqw;right:12.5cqw}
+.back .lcorner.tl,.back .lcorner.bl{left:3.5cqw;right:auto}
+.back .lcorner.tr,.back .lcorner.br{right:11.5cqw;left:auto}
+.back .bc{left:4cqw;right:12cqw}
+
 /* PHOTO PLATE */
 .plate{position:absolute;inset:0;padding:12cqw 9cqw 12cqw 13cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2}
 .snap{position:relative;width:72cqw;background:#f6efdc;padding:3cqw 3cqw 9cqw;transform:rotate(-1.6deg);margin:2cqw 0 5cqw;
@@ -298,6 +311,18 @@ pages.push({cls:'leather cover',bare:true,html:`
   <div class="from gold">De: Nicolás</div>
   <div class="to gold">Para: Dayanna</div>`});
 
+// Intro (justo después de la tapa)
+pages.push({html:`
+  <div class="band top"></div>
+  ${deco('corner-tl',corner('#D91023','#74ACDF'))}
+  ${deco('corner-br',corner('#74ACDF','#D91023'))}
+  ${deco('',decoPen,'right:10cqw;top:10cqw;width:32cqw;height:14cqw;transform:rotate(-4deg)')}
+  <div class="inner" style="justify-content:center;padding-left:15cqw;padding-right:12cqw">
+    ${orn}
+    <p style="font-family:'Caveat','Cormorant Garamond',cursive;font-weight:500;font-size:6.6cqw;line-height:1.38;text-align:center;margin:0 0 4cqw;color:var(--ink)">Sé que no es lo ideal y que no es igual de especial que una carta de papel, pero se me complica escribirla a mano y llevártela hasta allá. Que si fuese por mí, agarro la bici y te la llevo.</p>
+    ${orn}
+  </div>`});
+
 // 1
 pages.push({html:`
   <div class="band top"></div>
@@ -431,6 +456,18 @@ pages.push({html:`
     <p>Y aunque nos conozcamos hace tan poquito, aunque vivamos tan lejos y aunque no sepa qué va a pasar después de esto, me alegra muchísimo haberte conocido.</p>
     <p class="big ar" style="font-size:6.4cqw">Gracias por haberme contestado aquel mensaje.</p>
     <p>Y gracias por hacer que, aunque sea por un rato, pueda olvidarme de todo y simplemente disfrutar de hablar con vos.</p>
+  </div>`});
+
+// Última página (antes de la contratapa)
+pages.push({html:`
+  <div class="band bot"></div>
+  ${deco('corner-tl',corner('#D91023','#74ACDF'))}
+  ${deco('corner-br',corner('#74ACDF','#D91023'))}
+  <div class="inner" style="justify-content:center">
+    ${orn}
+    <p>No sé cómo va a seguir todo después de que leas esto. Puede ser bueno o malo, puede que se termine todo o que sigamos por el mismo camino que ahora. Pero lo que sí sé es que necesitaba decírtelo.</p>
+    <p>Yo no soy para nada de hacer cosas así, ni contar mis sentimientos y las cosas que me pasan, pero hace varios días que necesito decirte todo esto.</p>
+    <p class="big">Porque es lo que siento y no puedo seguir como si nada.</p>
   </div>`});
 
 // Back cover
